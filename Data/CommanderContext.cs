@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 namespace Api.Data 
 {
-    public class CommanderContext : IdentityDbContext 
+    public class CommanderContext : IdentityDbContext<ApplicationUser>
     {
         public CommanderContext(DbContextOptions<CommanderContext> opt) : base(opt)
         {
