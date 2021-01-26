@@ -7,12 +7,15 @@ using AutoMapper;
 using Api.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Api.Controller 
 {
     // api/commands
     [Route("api/commands")]
     [ApiController]
+    [Authorize(AuthenticationSchemes= JwtBearerDefaults.AuthenticationScheme)]
     public class CommandsController : ControllerBase 
     {
         private readonly ICommanderRepo _repository;
